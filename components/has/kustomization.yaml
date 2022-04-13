@@ -11,7 +11,7 @@ kind: Kustomization
 images:
 - name: quay.io/redhat-appstudio/application-service
   newName: quay.io/mbharatk/application-service
-  newTag: tag2
+  newTag: test-img-has-1
 
 configMapGenerator:
 - literals:
