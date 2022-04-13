@@ -1,25 +1,19 @@
 resources:
-- allow-argocd-to-manage.yaml
-- argocd-permissions.yaml
-- https://github.com/mmorhun/application-service/config/default?ref=b25826f2e1bdbd9f24761014d827a57ee0d4d341 
-- .tekton/
-
-
+  - allow-argocd-to-manage.yaml
+  - argocd-permissions.yaml
+  - https://github.com/mmorhun/application-service/config/default?ref=b25826f2e1bdbd9f24761014d827a57ee0d4d341
+  - .tekton/
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 images:
-- name: quay.io/redhat-appstudio/application-service
-  newName: quay.io/mbharatk/application-service
-  newTag: tag2
-
+  - name: quay.io/redhat-appstudio/application-service
+    newName: quay.io/mbharatk/application-service
+    newTag: tag2
 configMapGenerator:
-- literals:
-  - GITHUB_ORG=""
-  name: github-config
-  behavior: replace
-
+  - literals:
+      - GITHUB_ORG=mbharatk-test
+    name: github-config
+    behavior: replace
 namespace: application-service
-
 patches:
   - ./manager_resources_patch.yaml
