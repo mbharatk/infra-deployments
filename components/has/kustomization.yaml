@@ -1,7 +1,7 @@
 resources:
 - allow-argocd-to-manage.yaml
 - argocd-permissions.yaml
-- https://github.com/mmorhun/application-service/config/default?ref=b25826f2e1bdbd9f24761014d827a57ee0d4d341 
+- https://github.com/mmorhun/application-service/config/default?ref=b25826f2e1bdbd9f24761014d827a57ee0d4d341
 - .tekton/
 
 
